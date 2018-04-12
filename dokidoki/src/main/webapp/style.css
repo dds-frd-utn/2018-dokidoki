@@ -1,23 +1,29 @@
 body {
-  padding-top: 20px;
+  padding-top: 50px;
   text-align: center;
   font-family: tahoma, monospace;
   color: #fff;
-  background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif) 10%;
-  background-size: cover;
 }
 h1, h2 {
   display: inline-block;
-  background: #222;
+  background: #111;
 }
 h1 {
   font-size: 30px
 }
 h2 {
   font-size: 12px;
+  font-weight: normal;
 }
-#yellow-bg {
-  background: #fd0;
+pinktext {
+  color: pink;
+}
+a {
+  color: inherit;
+  font-weight: bold;
+}
+a:hover {
+  color: pink;
 }
 .button {
   background-color: #121;
@@ -30,8 +36,14 @@ h2 {
   transition-duration: 0.4s;
   font-variant: small-caps;
 }
-
 .button:hover {
   background-color: #141;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,1), 0 17px 50px 0 rgba(0,0,0,0.9);
+}
+.button:active {
+  color: green;
+  background-color: white;
+}
+.imagecover {
+  background-size: cover;
 }
