@@ -1,0 +1,110 @@
+body {
+  padding-top: 10px;
+  text-align: center;
+  align-items: center;
+  font-family: tahoma, monospace;
+  color: #fff;
+}
+h1, h2 {
+  display: inline-block;
+  background: #111;
+  border-radius: 4px;
+  position: relative;
+  left: 15px;
+}
+h1 {
+  font-size: 30px
+  position: relative;
+  top: 45px;
+}
+h2 {
+  font-size: 12px;
+  font-weight: normal;
+  position: relative;
+  top: 25px;
+}
+a {
+  color: inherit;
+  font-weight: bold;
+}
+a:hover {
+  color: pink;
+}
+img.logo {
+  float: left;
+  position: relative;
+  top: 10px;
+  left: 5px;
+  width: 180px;
+  height: 180px;
+  filter: sepia(80%)
+}
+
+pink {
+  color: #f88;
+  transition-duration: 0.5s;
+}
+pink:hover {
+  color: #f22;
+}
+.buttonheader {
+  background: #501;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition-duration: 0.05s;
+  font-variant: small-caps;
+  width: 128px;
+  height: 32px;
+  border-radius: 2px;
+  border-style: solid;
+  border-color: #111;
+  border-width: 1px;
+  margin-top: 2px;
+  position: relative;
+  top: -12px;
+}
+.buttonheader:hover {
+  border-color: #fff;
+  color: white;
+}
+.buttonheader:active {
+  background: #f0a;
+}
+.imagecover {
+  background-size: cover;
+}
+.rectangle {
+  width: 140px;
+  height: 146px;
+  border-radius: 2px;
+  background: #000;
+  border-style: solid;
+  border-color: #111;
+  margin: inherit;
+  position: relative;
+  left: 20px;
+  top: 40px;
+}
+.sectionbg {
+  width: 820px;
+  height: 900px;
+  background: rgb(10, 10, 10, 0.95);
+  display: inline-block;
+}
+.invisiblediv {
+  display: none;
+}
+.infopanel {
+  position: relative;
+  top: -132px;
+  left: 190px;
+  background: rgb(50, 50, 50, 0.5);
+  width: 600px;
+}
+.infotext {
+  font-family: tahoma;
+  font-size: 14px;
+}
