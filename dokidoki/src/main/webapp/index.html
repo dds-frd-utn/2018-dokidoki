@@ -7,22 +7,31 @@
       <script type = "text/javascript" src = "script.js"></script>
   </head>
   <body background = "bg.gif" class = "imagecover">
-    <div>
-      <h1>Welcome to <pink>Doki Doki</pink> Bank System!</h1><br>
+    <div class = "sectionbg">
+      <img src = "logo.png" class = "logo">
+      <div>
+        <h1>Welcome to <pink>Doki Doki</pink> Bank System!</h1><br>
         <h2>Created by <a href = "https://github.com/joaquinleonarg">Joaquín León</a> and <a href = "https://github.com/morlax97">Sir Milton Torasso</a></h2><br><br><br>
+      </div>
+      <div class = "rectangle">
+        <button class = "buttonheader" onclick = "showElement('page1')">Clientes</button>
+        <button class = "buttonheader" onclick = "showElement('page2')">Contactos</button>
+        <button class = "buttonheader" onclick = "showElement('page3')">Cuentas</button>
+        <button class = "buttonheader" onclick = "showElement('page4')">Movimientos</button>
+      </div>
+      <br>
+      <div class = "invisiblediv" id = "page1" display = "inline">
+        <div class = "infopanel">
+          <div class = "infotext">
+          <strong>Descripción de los métodos y formas de llamar al servicio ClienteRest:<br><br>
+          <mark>GET</mark> (/rest/cliente): Devuelve una lista con todos los clientes. Si se especifica un id (/id) al final de la ruta, devuelve solo el cliente con dicho id.<br>
+          <div class = "tabbedtext">Formato: {"id": integer, "nombre": string, "cuil": integer}
+
+        </div>
+      </div>
+      <div class = "invisiblediv" id = "page6" display = "none">
+        Página 6
+      </div>
     </div>
-    <div class = "rectangle">
-      <button class = "buttonheader" onclick = "showElement('page1')">Buscar</button>
-      <button class = "buttonheader" onclick = "showElement('page2')">Crear registro</button>
-      <button class = "buttonheader">Meme</button>
-      <button class = "buttonheader">Botón</button>
-      <button class = "buttonheader">Otro botón</button>
-      <button class = "buttonheader">Hola</button>
-    </div>
-    <br>
-    <div class = "invisiblediv" id = "page1" display = "inline">
-      <div class = "sectionbg"></div>
-    </div>
-    <div class = "invisiblediv" id = "page6" display = "none">Página 6</div>
   </body>
 </html>

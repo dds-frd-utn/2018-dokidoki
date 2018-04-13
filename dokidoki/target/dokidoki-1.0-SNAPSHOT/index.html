@@ -7,22 +7,32 @@
       <script type = "text/javascript" src = "script.js"></script>
   </head>
   <body background = "bg.gif" class = "imagecover">
-    <div>
-      <h1>Welcome to <pink>Doki Doki</pink> Bank System!</h1><br>
+    <div class = "sectionbg">
+      <img src = "logo.png" class = "logo">
+      <div>
+        <h1>Welcome to <pink>Doki Doki</pink> Bank System!</h1><br>
         <h2>Created by <a href = "https://github.com/joaquinleonarg">Joaquín León</a> and <a href = "https://github.com/morlax97">Sir Milton Torasso</a></h2><br><br><br>
+      </div>
+      <div class = "rectangle">
+        <button class = "buttonheader" onclick = "showElement('page1')">Clientes</button>
+        <button class = "buttonheader" onclick = "showElement('page2')">Contactos</button>
+        <button class = "buttonheader" onclick = "showElement('page3')">Cuentas</button>
+        <button class = "buttonheader" onclick = "showElement('page4')">Movimientos</button>
+      </div>
+      <br>
+      <div class = "invisiblediv" id = "page1" display = "inline">
+        <div class = "infopanel">
+          <div class = "infotext">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla lacus, feugiat scelerisque est id, egestas aliquet orci. Nunc euismod, lorem ut bibendum iaculis, lacus ante rhoncus erat, eu dignissim augue nunc sed est. Duis laoreet pharetra libero sed sodales. Quisque gravida rhoncus dolor ut laoreet. Fusce vehicula tortor et nulla sodales imperdiet. Pellentesque pulvinar sit amet enim ac convallis. Donec semper dignissim diam sit amet luctus. Vestibulum mollis mollis orci, quis blandit lectus aliquet nec. Mauris sodales neque ex, in lacinia dui dignissim sit amet. Cras luctus convallis nisi, at fringilla magna fringilla a.<br><br>
+
+          Etiam ipsum mi, faucibus at semper sit amet, sagittis sit amet ex. Suspendisse eleifend eget mi nec semper. In non mauris est. Nulla id interdum nulla. In nec dapibus lectus. Pellentesque convallis lorem sed suscipit eleifend. Proin lobortis cursus eros sed sagittis. Fusce in velit at est ultrices condimentum. Proin placerat dui consequat erat malesuada, in sagittis nunc tristique. Integer nec egestas elit. Donec efficitur vel urna eget euismod. Nam sit amet lacinia tortor, quis euismod massa. Nullam convallis diam nibh, eu suscipit sem tristique in. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ultrices purus et diam vehicula, et interdum metus luctus. Donec quis ornare magna, at gravida ipsum.<br><br>
+
+          Etiam vitae dolor non tortor aliquam pellentesque ac ac est. Fusce pretium rutrum metus, sed dictum ante dignissim vitae. Vestibulum in bibendum leo. Mauris in lorem vitae turpis tincidunt ultricies ac tincidunt nisl. Vestibulum vehicula, leo et interdum suscipit, risus sem tristique sem, et aliquet dolor ligula venenatis nisi. Aenean luctus, augue ut egestas efficitur, velit lacus fermentum ex, vel dictum nibh nibh at libero. Donec pellentesque magna sapien, mollis pellentesque augue iaculis et. Suspendisse vel eros hendrerit sem volutpat cursus id quis elit. Duis imperdiet orci nec arcu volutpat, nec gravida ante rhoncus. Mauris ultrices leo est, sed ullamcorper elit rhoncus sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus efficitur finibus nulla quis tempor. Nullam viverra dui sit amet nisi pretium efficitur. Donec vehicula ante mauris, vel ultricies massa aliquam ac. Nulla eu libero bibendum, aliquam massa id, accumsan nulla. In ullamcorper ornare varius.
+        </div>
+      </div>
+      <div class = "invisiblediv" id = "page6" display = "none">
+        Página 6
+      </div>
     </div>
-    <div class = "rectangle">
-      <button class = "buttonheader" onclick = "showElement('page1')">Buscar</button>
-      <button class = "buttonheader" onclick = "showElement('page2')">Crear registro</button>
-      <button class = "buttonheader">Meme</button>
-      <button class = "buttonheader">Botón</button>
-      <button class = "buttonheader">Otro botón</button>
-      <button class = "buttonheader">Hola</button>
-    </div>
-    <br>
-    <div class = "invisiblediv" id = "page1" display = "inline">
-      <div class = "sectionbg"></div>
-    </div>
-    <div class = "invisiblediv" id = "page6" display = "none">Página 6</div>
   </body>
 </html>
