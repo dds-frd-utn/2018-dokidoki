@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" type="text/css" href=" style.css">
-    <head>
-        <title>DokiDoki Bank System</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    </head>
-    <body background = "https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif" class = "imagecover">
-        <h1>Welcome to <pinktext>Doki Doki</pinktext> Bank System!</h1><br>
+<link rel = "stylesheet" type = "text/css" href = "style.css">
+  <head>
+    <title>DokiDoki Bank System</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <script type = "text/javascript" src = "script.js"></script>
+  </head>
+  <body background = "bg.gif" class = "imagecover">
+    <div>
+      <h1>Welcome to <pink>Doki Doki</pink> Bank System!</h1><br>
         <h2>Created by <a href = "https://github.com/joaquinleonarg">Joaquín León</a> and <a href = "https://github.com/morlax97">Sir Milton Torasso</a></h2><br><br><br>
-        <form>
-          <input type = "text" name = "cliente" placeholder = "Cliente" maxlength = "30"></input>
-          <button class = "button">Buscar</button>
-        </form>
-    </body>
+    </div>
+    <div class = "rectangle">
+      <button class = "buttonheader" onclick = "showElement('page1')">Buscar</button>
+      <button class = "buttonheader" onclick = "showElement('page2')">Crear registro</button>
+      <button class = "buttonheader">Meme</button>
+      <button class = "buttonheader">Botón</button>
+      <button class = "buttonheader">Otro botón</button>
+      <button class = "buttonheader">Hola</button>
+    </div>
+    <br>
+    <div class = "invisiblediv" id = "page1" display = "inline">
+      <div class = "sectionbg"></div>
+    </div>
+    <div class = "invisiblediv" id = "page6" display = "none">Página 6</div>
+  </body>
 </html>
