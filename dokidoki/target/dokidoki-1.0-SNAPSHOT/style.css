@@ -13,7 +13,7 @@ h1, h2 {
   left: 15px;
 }
 h1 {
-  font-size: 30px
+  font-size: 30px;
   position: relative;
   top: 45px;
 }
@@ -107,4 +107,16 @@ pink:hover {
 .infotext {
   font-family: tahoma;
   font-size: 14px;
+  text-align: left;
+  margin-left: 2px;
+}
+.tabbedtext {
+  font-family: tahoma;
+  font-size: 14px;
+  text-align: left;
+  margin-left: 32px;
+}
+
+.infotext.hoverabletext:hover {
+  background-color: #777;
 }

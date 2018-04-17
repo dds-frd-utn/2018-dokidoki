@@ -16,47 +16,47 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import utn.frd.dokidoki.entity.Contacto;
-import utn.frd.dokidoki.sessions.ContactoFacade;
+import utn.frd.dokidoki.entity.Cuenta;
+import utn.frd.dokidoki.sessions.CuentaFacade;
 /**
  *
  * @author Sergio
  */
-@Path("/contacto")
-public class ContactoRest {
+@Path("/Cuenta")
+public class CuentaRest {
     @EJB
-    private ContactoFacade ejbContactoFacade;
+    private CuentaFacade ejbCuentaFacade;
     //obtener todas las entidades
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public List<Contacto> findAll(){
-        return ejbContactoFacade.findAll();
+    public List<Cuenta> findAll(){
+        return ejbCuentaFacade.findAll();
     }
     //crear entidades
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
-    public void create(Contacto contacto){
-        ejbContactoFacade.create(contacto);
+    public void create(Cuenta Cuenta){
+        ejbCuentaFacade.create(Cuenta);
     }
     //actualizar entidades
     @PUT
     @Consumes({MediaType.APPLICATION_JSON})
     @Path("/{id}")
-    public void edit(@PathParam("id")long id, Contacto contacto){
-        ejbContactoFacade.edit(contacto);
+    public void edit(@PathParam("id")long id, Cuenta Cuenta){
+        ejbCuentaFacade.edit(Cuenta);
     }
     //eliminar entidades
     @DELETE
     @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
     @Path("/{id}")
     public void remove(@PathParam("id")long id){
-        ejbContactoFacade.remove( ejbContactoFacade.find(id) );
+        ejbCuentaFacade.remove( ejbCuentaFacade.find(id) );
     }
     //obtener una entidad por id
     @GET
     @Path("/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Contacto findById(@PathParam("id")long id){
-        return ejbContactoFacade.find(id);
+    public Cuenta findById(@PathParam("id")long id){
+        return ejbCuentaFacade.find(id);
     }
 }

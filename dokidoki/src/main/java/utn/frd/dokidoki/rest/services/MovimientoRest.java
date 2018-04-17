@@ -16,47 +16,47 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import utn.frd.dokidoki.entity.Contacto;
-import utn.frd.dokidoki.sessions.ContactoFacade;
+import utn.frd.dokidoki.entity.Movimiento;
+import utn.frd.dokidoki.sessions.MovimientoFacade;
 /**
  *
  * @author Sergio
  */
-@Path("/contacto")
-public class ContactoRest {
+@Path("/Movimiento")
+public class MovimientoRest {
     @EJB
-    private ContactoFacade ejbContactoFacade;
+    private MovimientoFacade ejbMovimientoFacade;
     //obtener todas las entidades
     @GET
     @Produces({MediaType.APPLICATION_JSON})
-    public List<Contacto> findAll(){
-        return ejbContactoFacade.findAll();
+    public List<Movimiento> findAll(){
+        return ejbMovimientoFacade.findAll();
     }
     //crear entidades
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
-    public void create(Contacto contacto){
-        ejbContactoFacade.create(contacto);
+    public void create(Movimiento Movimiento){
+        ejbMovimientoFacade.create(Movimiento);
     }
     //actualizar entidades
     @PUT
     @Consumes({MediaType.APPLICATION_JSON})
     @Path("/{id}")
-    public void edit(@PathParam("id")long id, Contacto contacto){
-        ejbContactoFacade.edit(contacto);
+    public void edit(@PathParam("id")long id, Movimiento Movimiento){
+        ejbMovimientoFacade.edit(Movimiento);
     }
     //eliminar entidades
     @DELETE
     @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
     @Path("/{id}")
     public void remove(@PathParam("id")long id){
-        ejbContactoFacade.remove( ejbContactoFacade.find(id) );
+        ejbMovimientoFacade.remove( ejbMovimientoFacade.find(id) );
     }
     //obtener una entidad por id
     @GET
     @Path("/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Contacto findById(@PathParam("id")long id){
-        return ejbContactoFacade.find(id);
+    public Movimiento findById(@PathParam("id")long id){
+        return ejbMovimientoFacade.find(id);
     }
 }
