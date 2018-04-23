@@ -16,6 +16,20 @@
       - PUT: (/rest/cliente): Consume un dato tipo Cliente, y actualiza el Cliente en la base de datos que tenga el mismo id (/id).
       
       - DELETE: (/rest/cliente): Consume un dato tipo Cliente, y elimina el Cliente en la base de datos que tenga el mismo id (/id).
+      
+## ContactoRest:
+
+   - Dato tipo Contacto: {"id": integer, "tipo": string, "valor": string, "actualidazo": timestamp , "id_cliente": int}
+  
+   - Metodos:
+      
+      -  GET:  (/rest/contacto): Devuelve una lista con todos los contactos. Si se especifica un id (/id) al final de la ruta, devuelve solo el      contacto con dicho id.
+      
+      - POST: (/rest/contacto): Consume un dato tipo Contacto y lo agrega a la base de datos.
+      
+      - PUT: (/rest/contacto): Consume un dato tipo Contacto, y actualiza el Contacto en la base de datos que tenga el mismo id (/id).
+      
+      - DELETE: (/rest/contacto): Consume un dato tipo Contacto, y elimina el Contacto en la base de datos que tenga el mismo id (/id).
   
 
 
