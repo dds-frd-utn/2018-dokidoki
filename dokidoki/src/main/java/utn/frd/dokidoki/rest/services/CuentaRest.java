@@ -22,7 +22,7 @@ import utn.frd.dokidoki.sessions.CuentaFacade;
  *
  * @author Sergio
  */
-@Path("/Cuenta")
+@Path("/cuenta")
 public class CuentaRest {
     @EJB
     private CuentaFacade ejbCuentaFacade;
@@ -35,15 +35,15 @@ public class CuentaRest {
     //crear entidades
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
-    public void create(Cuenta Cuenta){
-        ejbCuentaFacade.create(Cuenta);
+    public void create(Cuenta cuenta){
+        ejbCuentaFacade.create(cuenta);
     }
     //actualizar entidades
     @PUT
     @Consumes({MediaType.APPLICATION_JSON})
     @Path("/{id}")
-    public void edit(@PathParam("id")long id, Cuenta Cuenta){
-        ejbCuentaFacade.edit(Cuenta);
+    public void edit(@PathParam("id")long id, Cuenta cuenta){
+        ejbCuentaFacade.edit(cuenta);
     }
     //eliminar entidades
     @DELETE
@@ -52,11 +52,5 @@ public class CuentaRest {
     public void remove(@PathParam("id")long id){
         ejbCuentaFacade.remove( ejbCuentaFacade.find(id) );
     }
-    //obtener una entidad por id
-    @GET
-    @Path("/{id}")
-    @Produces({MediaType.APPLICATION_JSON})
-    public Cuenta findById(@PathParam("id")long id){
-        return ejbCuentaFacade.find(id);
-    }
+    
 }

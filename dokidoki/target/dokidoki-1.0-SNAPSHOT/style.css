@@ -108,7 +108,8 @@ pink:hover {
   font-family: tahoma;
   font-size: 14px;
   text-align: left;
-  margin-left: 2px;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 .tabbedtext {
   font-family: tahoma;
@@ -116,7 +117,9 @@ pink:hover {
   text-align: left;
   margin-left: 32px;
 }
-
-.infotext.hoverabletext:hover {
+.hoverabletext {
+  transition-duration: 0.3s;
+}
+.hoverabletext:hover {
   background-color: #777;
 }

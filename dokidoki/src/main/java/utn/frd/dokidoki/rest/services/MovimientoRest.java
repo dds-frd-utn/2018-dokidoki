@@ -5,6 +5,7 @@
  */
 package utn.frd.dokidoki.rest.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -22,7 +23,7 @@ import utn.frd.dokidoki.sessions.MovimientoFacade;
  *
  * @author Sergio
  */
-@Path("/Movimiento")
+@Path("/movimiento")
 public class MovimientoRest {
     @EJB
     private MovimientoFacade ejbMovimientoFacade;
@@ -35,15 +36,15 @@ public class MovimientoRest {
     //crear entidades
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
-    public void create(Movimiento Movimiento){
-        ejbMovimientoFacade.create(Movimiento);
+    public void create(Movimiento movimiento){
+        ejbMovimientoFacade.create(movimiento);
     }
     //actualizar entidades
     @PUT
     @Consumes({MediaType.APPLICATION_JSON})
     @Path("/{id}")
-    public void edit(@PathParam("id")long id, Movimiento Movimiento){
-        ejbMovimientoFacade.edit(Movimiento);
+    public void edit(@PathParam("id")long id, Movimiento movimiento){
+        ejbMovimientoFacade.edit(movimiento);
     }
     //eliminar entidades
     @DELETE
@@ -52,11 +53,19 @@ public class MovimientoRest {
     public void remove(@PathParam("id")long id){
         ejbMovimientoFacade.remove( ejbMovimientoFacade.find(id) );
     }
-    //obtener una entidad por id
+    //obtener los ultimos 10 movimientos de una cuenta
     @GET
     @Path("/{id}")
     @Produces({MediaType.APPLICATION_JSON})
-    public Movimiento findById(@PathParam("id")long id){
-        return ejbMovimientoFacade.find(id);
+    public List<Movimiento> findById(@PathParam("id")long id){
+        List<Movimiento> movimientos = ejbMovimientoFacade.findAll();
+        List<Movimiento> aux = new ArrayList<>();
+        for (Movimiento movimiento : movimientos) {
+            if (movimiento.getIdCuenta() != id) {
+                aux.add(movimiento);
+            }
+        }
+        movimientos.removeAll(aux);
+        return movimientos.subList(Math.max(0, movimientos.size()-10), movimientos.size());
     }
 }
