@@ -44,6 +44,20 @@
       - PUT: (/rest/cuenta): Consume un dato tipo Cuenta, y actualiza la Cuenta en la base de datos que tenga el mismo id (/id).
       
       - DELETE: (/rest/cuenta): Consume un dato tipo Cuenta, y elimina la Cuenta en la base de datos que tenga el mismo id (/id).
+      
+## MovimientoRest:
+
+   - Dato tipo Movimiento: {"id": integer, "creado": timestamp, "procesado": timestamp, "tipo": integer, "estado": integer, "importe": integer, "id_cuenta": integer}
+  
+   - Metodos:
+      
+      -  GET:  (/rest/movimiento): Devuelve una lista con todas los movimientos. En caso de especificarse un id (/id) al final de la ruta, devuelve los ultimos 10 movimientos de dicho id. 
+      
+      - POST: (/rest/movimiento): Consume un dato tipo Movimiento y lo agrega a la base de datos.
+      
+      - PUT: (/rest/movimiento): Consume un dato tipo Movimiento, y actualiza la Movimiento en la base de datos que tenga el mismo id (/id).
+      
+      - DELETE: (/rest/movimiento): Consume un dato tipo Movimiento, y elimina la Movimiento en la base de datos que tenga el mismo id (/id).
   
 
 
