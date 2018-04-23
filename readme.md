@@ -19,7 +19,7 @@
       
 ## ContactoRest:
 
-   - Dato tipo Contacto: {"id": integer, "tipo": string, "valor": string, "actualidazo": timestamp , "id_cliente": int}
+   - Dato tipo Contacto: {"id": integer, "tipo": string, "valor": string, "actualidazo": timestamp , "id_cliente": integer}
   
    - Metodos:
       
@@ -30,6 +30,20 @@
       - PUT: (/rest/contacto): Consume un dato tipo Contacto, y actualiza el Contacto en la base de datos que tenga el mismo id (/id).
       
       - DELETE: (/rest/contacto): Consume un dato tipo Contacto, y elimina el Contacto en la base de datos que tenga el mismo id (/id).
+      
+## CuentaRest:
+
+   - Dato tipo Cuenta: {"id": integer, "numero": integer, "apertura": timestamp, "id_cliente": integer}
+  
+   - Metodos:
+      
+      -  GET:  (/rest/cuenta): Devuelve una lista con todas las cuentas. 
+      
+      - POST: (/rest/cuenta): Consume un dato tipo Cuenta y lo agrega a la base de datos.
+      
+      - PUT: (/rest/cuenta): Consume un dato tipo Cuenta, y actualiza la Cuenta en la base de datos que tenga el mismo id (/id).
+      
+      - DELETE: (/rest/cuenta): Consume un dato tipo Cuenta, y elimina la Cuenta en la base de datos que tenga el mismo id (/id).
   
 
 
