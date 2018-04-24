@@ -5,7 +5,6 @@
  */
 package utn.frd.dokidoki.rest.services;
 
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
@@ -21,7 +20,7 @@ import utn.frd.dokidoki.entity.Movimiento;
 import utn.frd.dokidoki.sessions.MovimientoFacade;
 /**
  *
- * @author Sergio
+ * @author Fedora
  */
 @Path("/movimiento")
 public class MovimientoRest {
@@ -55,17 +54,21 @@ public class MovimientoRest {
     }
     //obtener los ultimos 10 movimientos de una cuenta
     @GET
-    @Path("/{id}")
+    @Path("/{id}/ultimosdiez")
     @Produces({MediaType.APPLICATION_JSON})
-    public List<Movimiento> findById(@PathParam("id")long id){
-        List<Movimiento> movimientos = ejbMovimientoFacade.findAll();
-        List<Movimiento> aux = new ArrayList<>();
-        for (Movimiento movimiento : movimientos) {
-            if (movimiento.getIdCuenta() != id) {
-                aux.add(movimiento);
-            }
-        }
-        movimientos.removeAll(aux);
-        return movimientos.subList(Math.max(0, movimientos.size()-10), movimientos.size());
+    public List<Movimiento> findLastMovements(@PathParam("id")long id){
+        return ejbMovimientoFacade.findLastMovements(id);
+    }
+    @GET
+    @Path("/{id}/saldo")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Object getSaldo(@PathParam("id")long id){
+        return ejbMovimientoFacade.getSaldo(id);
+    }
+    @GET
+    @Path("/{id}/{estado}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<Movimiento> findLastMovements(@PathParam("id")long id, @PathParam("estado")long estado){
+        return ejbMovimientoFacade.findAllOfCuentaWithEstado(id, estado);
     }
 }

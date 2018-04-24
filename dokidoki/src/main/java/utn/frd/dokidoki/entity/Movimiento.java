@@ -36,7 +36,9 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Movimiento.findByTipo", query = "SELECT m FROM Movimiento m WHERE m.tipo = :tipo")
     , @NamedQuery(name = "Movimiento.findByEstado", query = "SELECT m FROM Movimiento m WHERE m.estado = :estado")
     , @NamedQuery(name = "Movimiento.findByImporte", query = "SELECT m FROM Movimiento m WHERE m.importe = :importe")
-    , @NamedQuery(name = "Movimiento.findByIdCuenta", query = "SELECT m FROM Movimiento m WHERE m.idCuenta = :idCuenta")})
+    , @NamedQuery(name = "Movimiento.findByIdCuentaOrdered", query = "SELECT m FROM Movimiento m WHERE m.idCuenta = :idCuenta ORDER BY m.procesado DESC")
+    , @NamedQuery(name = "Movimiento.findByIdCuentaByEstado", query = "SELECT m FROM Movimiento m WHERE m.idCuenta = :idCuenta AND m.estado = :estado")
+    , @NamedQuery(name = "Movimiento.getSaldo", query = "SELECT SUM(CASE WHEN (m.tipo = 2) THEN m.importe ELSE -m.importe END) FROM Movimiento m WHERE m.idCuenta = :idCuenta")})
 public class Movimiento implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -5,6 +5,7 @@
  */
 package utn.frd.dokidoki.sessions;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,5 +29,10 @@ public class CuentaFacade extends AbstractFacade<Cuenta> {
     public CuentaFacade() {
         super(Cuenta.class);
     }
+
+    public List<Cuenta> findAllOfCliente(long id) {
+        return em.createNamedQuery("Cuenta.findByIdCliente").setParameter("idCliente", id).getResultList();
+    }
+    
     
 }

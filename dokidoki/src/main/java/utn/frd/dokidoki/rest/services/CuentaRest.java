@@ -32,6 +32,12 @@ public class CuentaRest {
     public List<Cuenta> findAll(){
         return ejbCuentaFacade.findAll();
     }
+    @GET
+    @Produces({MediaType.APPLICATION_JSON})
+    @Path("/{id}")
+    public List<Cuenta> findAllOfCliente(@PathParam("id")long id){
+        return ejbCuentaFacade.findAllOfCliente(id);
+    }
     //crear entidades
     @POST
     @Consumes({MediaType.APPLICATION_JSON})
