@@ -37,13 +37,13 @@
   
    - Metodos:
       
-      -  GET:  (/rest/cuenta): Devuelve una lista con todas las cuentas. 
+      -  GET:  (/rest/cuenta): Devuelve una lista con todas las cuentas. En caso de especificarse un id (/{id}), devuelve solo la cuenta con dicho id.
       
       - POST: (/rest/cuenta): Consume un dato tipo Cuenta y lo agrega a la base de datos.
       
-      - PUT: (/rest/cuenta): Consume un dato tipo Cuenta, y actualiza la Cuenta en la base de datos que tenga el mismo id (/id).
+      - PUT: (/rest/cuenta/{id}): Consume un dato tipo Cuenta, y actualiza la Cuenta en la base de datos que tenga el mismo id ({/id}).
       
-      - DELETE: (/rest/cuenta): Consume un dato tipo Cuenta, y elimina la Cuenta en la base de datos que tenga el mismo id (/id).
+      - DELETE: (/rest/cuenta/{id}): Consume un dato tipo Cuenta, y elimina la Cuenta en la base de datos que tenga el mismo id ({/id}).
       
 ## MovimientoRest:
 
