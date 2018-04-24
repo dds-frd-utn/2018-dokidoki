@@ -51,7 +51,13 @@
   
    - Metodos:
       
-      -  GET:  (/rest/movimiento): Devuelve una lista con todas los movimientos. En caso de especificarse un id (/id) al final de la ruta, devuelve los ultimos 10 movimientos de dicho id. 
+      -  GET:  (/rest/movimiento): Devuelve una lista con todas los movimientos. En caso de especificarse un id, se pueden realizar las siguientes consultas modificando la ruta:
+      
+           1) (/{id}/ultimosdiez) devuelve los últimos 10 movimientos de dicho id. 
+
+           2) (/{id}/saldo) devuelve el saldo de la cuenta de dicho id.
+
+           3) (/{id}/{estado}) devuelve todos los movimientos con el estado indicado.
       
       - POST: (/rest/movimiento): Consume un dato tipo Movimiento y lo agrega a la base de datos.
       
