@@ -58,6 +58,8 @@
            2) (/{id}/saldo) devuelve el saldo de la cuenta de dicho id.
 
            3) (/{id}/{estado}) devuelve todos los movimientos con el estado indicado.
+           
+           4) (/descripcion/{descripcion}) devuelve todos los movimientos que coincidan con una descripción.
       
       - POST: (/rest/movimiento): Consume un dato tipo Movimiento y lo agrega a la base de datos.
       
