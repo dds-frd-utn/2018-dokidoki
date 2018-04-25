@@ -65,9 +65,11 @@
       
       - DELETE: (/rest/movimiento): Consume un dato tipo Movimiento, y elimina la Movimiento en la base de datos que tenga el mismo id (/id).
   
+## Diagrama de Clases de Dominio:
 
-
-
+<p align="center"> 
+<img src="https://github.com/JoaquinLeonArg/DokiDoki/blob/master/Dise%C3%B1oDeSistemasUML.png">
+</p>
 
 
 ## Collaborators:
