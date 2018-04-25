@@ -71,4 +71,10 @@ public class MovimientoRest {
     public List<Movimiento> findLastMovements(@PathParam("id")long id, @PathParam("estado")long estado){
         return ejbMovimientoFacade.findAllOfCuentaWithEstado(id, estado);
     }
+    @GET
+    @Path("/descripcion/{descripcion}")
+    @Produces({MediaType.APPLICATION_JSON})
+    public List<Movimiento> findAllWithDescripcion(@PathParam("descripcion")String descripcion) {
+        return ejbMovimientoFacade.findAllWithDescripcion(descripcion);
+    }
 }

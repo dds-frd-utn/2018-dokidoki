@@ -36,6 +36,7 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Movimiento.findByTipo", query = "SELECT m FROM Movimiento m WHERE m.tipo = :tipo")
     , @NamedQuery(name = "Movimiento.findByEstado", query = "SELECT m FROM Movimiento m WHERE m.estado = :estado")
     , @NamedQuery(name = "Movimiento.findByImporte", query = "SELECT m FROM Movimiento m WHERE m.importe = :importe")
+    , @NamedQuery(name = "Movimiento.findByDescripcion", query = "SELECT m FROM Movimiento m WHERE m.descripcion = :descripcion")
     , @NamedQuery(name = "Movimiento.findByIdCuentaOrdered", query = "SELECT m FROM Movimiento m WHERE m.idCuenta = :idCuenta ORDER BY m.procesado DESC")
     , @NamedQuery(name = "Movimiento.findByIdCuentaByEstado", query = "SELECT m FROM Movimiento m WHERE m.idCuenta = :idCuenta AND m.estado = :estado")
     , @NamedQuery(name = "Movimiento.getSaldo", query = "SELECT SUM(CASE WHEN (m.tipo = 2) THEN m.importe ELSE -m.importe END) FROM Movimiento m WHERE m.idCuenta = :idCuenta")})
@@ -71,6 +72,9 @@ public class Movimiento implements Serializable {
     @NotNull
     @Column(name = "id_cuenta")
     private int idCuenta;
+    @Basic(optional = true)
+    @Column(name = "descripcion")
+    private String descripcion;
 
     public Movimiento() {
     }
@@ -79,13 +83,14 @@ public class Movimiento implements Serializable {
         this.id = id;
     }
 
-    public Movimiento(Integer id, Date creado, int tipo, int estado, double importe, int idCuenta) {
+    public Movimiento(Integer id, Date creado, int tipo, int estado, double importe, int idCuenta, String descripcion) {
         this.id = id;
         this.creado = creado;
         this.tipo = tipo;
         this.estado = estado;
         this.importe = importe;
         this.idCuenta = idCuenta;
+        this.descripcion = descripcion;
     }
 
     public Integer getId() {
@@ -142,6 +147,14 @@ public class Movimiento implements Serializable {
 
     public void setIdCuenta(int idCuenta) {
         this.idCuenta = idCuenta;
+    }
+    
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     @Override
