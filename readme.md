@@ -58,6 +58,8 @@
            2) (/{id}/saldo) devuelve el saldo de la cuenta de dicho id.
 
            3) (/{id}/{estado}) devuelve todos los movimientos con el estado indicado.
+           
+           4) (/descripcion/{descripcion}) devuelve todos los movimientos que coincidan con una descripción.
       
       - POST: (/rest/movimiento): Consume un dato tipo Movimiento y lo agrega a la base de datos.
       
@@ -65,9 +67,11 @@
       
       - DELETE: (/rest/movimiento): Consume un dato tipo Movimiento, y elimina la Movimiento en la base de datos que tenga el mismo id (/id).
   
+## Diagrama de Clases de Dominio:
 
-
-
+<p align="center"> 
+<img src="https://github.com/JoaquinLeonArg/DokiDoki/blob/master/Dise%C3%B1oDeSistemasUML.png">
+</p>
 
 
 ## Collaborators:
