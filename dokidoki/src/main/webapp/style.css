@@ -37,7 +37,17 @@ img.logo {
   left: 5px;
   width: 180px;
   height: 180px;
-  filter: sepia(80%)
+  filter: sepia(80%);
+}
+img.uml {
+  width: 100%;
+}
+li {
+  list-style-position: outside;
+  top: 14px;
+}
+li:hover {
+  background-color: #111;
 }
 
 pink {
@@ -78,7 +88,7 @@ pink:hover {
 }
 .rectangle {
   width: 140px;
-  height: 146px;
+  height: 190px;
   border-radius: 2px;
   background: #000;
   border-style: solid;

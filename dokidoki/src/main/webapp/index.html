@@ -14,26 +14,89 @@
         <h2>Created by <a href = "https://github.com/joaquinleonarg">Joaquín León</a> and <a href = "https://github.com/morlax97">Sir Milton Torasso</a></h2><br><br><br>
       </div>
       <div class = "rectangle">
+        <button class = "buttonheader" onclick = "showElement('page0')">UML</button>
         <button class = "buttonheader" onclick = "showElement('page1')">Clientes</button>
         <button class = "buttonheader" onclick = "showElement('page2')">Contactos</button>
         <button class = "buttonheader" onclick = "showElement('page3')">Cuentas</button>
         <button class = "buttonheader" onclick = "showElement('page4')">Movimientos</button>
       </div>
       <br>
-      <div class = "invisiblediv" id = "page1" display = "inline">
+
+      <div class = "invisiblediv" id = "page0" display = "inline">
         <div class = "infopanel">
           <div class = "infotext">
-            <strong>Descripción de los métodos y formas de llamar al servicio ClienteRest:<br>
-              <div class = "tabbedtext">Formato del dato: {"id": integer, "nombre": string, "cuil": integer} </div><br>
-              <div class = "hoverabletext">
-                <mark>GET</mark> (/rest/cliente): Devuelve una lista con todos los clientes. Si se especifica un id (/id) al final de la ruta, devuelve solo el cliente con dicho id.<br>
-              </div>
-
+            <strong>Diagrama de clases de dominio:<br><br>
+            <img class = "uml" src = "uml.png">
+          </div>
         </div>
       </div>
-      <div class = "invisiblediv" id = "page6" display = "none">
-        Página 6
+
+      <div class = "invisiblediv" id = "page1" display = "inline">
+        <div class = "infopanel">
+          <div class = "infotext"><br>
+            <strong>Dato tipo Cliente: {"id": integer, "nombre": string, "cuil": integer}</strong><br>
+            Métodos:
+            <ul>
+              <li> GET: (/rest/cliente): Devuelve una lista con todos los clientes. Si se especifica un id ({/id}) al final de la ruta, devuelve solo el cliente con dicho id.
+              <li> GET: (/rest/cliente): Devuelve una lista con todos los clientes. Si se especifica un id ({/id}) al final de la ruta, devuelve solo el cliente con dicho id.
+              <li> POST: (/rest/cliente): Consume un dato tipo Cliente y lo agrega a la base de datos.
+              <li> PUT: (/rest/cliente/{id}): Consume un dato tipo Cliente, y actualiza el Cliente en la base de datos que tenga el mismo id ({/id}).
+              <li> DELETE: (/rest/cliente/{id}): Consume un dato tipo Cliente, y elimina el Cliente en la base de datos que tenga el mismo id ({/id}).
+            </ul><br>
+          </div>
+        </div>
       </div>
+
+      <div class = "invisiblediv" id = "page2" display = "inline">
+        <div class = "infopanel">
+          <div class = "infotext"><br>
+            <strong>Dato tipo Contacto: {"id": integer, "tipo": string, "valor": string, "actualidazo": timestamp , "id_cliente": integer}</strong><br>
+            Métodos:
+            <ul>
+              <li>GET: (/rest/contacto): Devuelve una lista con todos los contactos. Si se especifica un id ({/id}) al final de la ruta, devuelve solo el contacto con dicho id.
+              <li>POST: (/rest/contacto): Consume un dato tipo Contacto y lo agrega a la base de datos.
+              <li>PUT: (/rest/contacto/{id}): Consume un dato tipo Contacto, y actualiza el Contacto en la base de datos que tenga el mismo id ({/id}).
+              <li>DELETE: (/rest/contacto/{id}): Consume un dato tipo Contacto, y elimina el Contacto en la base de datos que tenga el mismo id ({/id}).
+            </ul><br>
+          </div>
+        </div>
+      </div>
+
+      <div class = "invisiblediv" id = "page3" display = "inline">
+        <div class = "infopanel">
+          <div class = "infotext"><br>
+            <strong>Dato tipo Cuenta: {"id": integer, "numero": integer, "apertura": timestamp, "id_cliente": integer}</strong><br>
+            Métodos:
+            <ul>
+              <li>GET: (/rest/cuenta): Devuelve una lista con todas las cuentas. En caso de especificarse un id (/{id}), devuelve solo la cuenta con dicho id.
+              <li>POST: (/rest/cuenta): Consume un dato tipo Cuenta y lo agrega a la base de datos.
+              <li>PUT: (/rest/cuenta/{id}): Consume un dato tipo Cuenta, y actualiza la Cuenta en la base de datos que tenga el mismo id ({/id}).
+              <li>DELETE: (/rest/cuenta/{id}): Consume un dato tipo Cuenta, y elimina la Cuenta en la base de datos que tenga el mismo id ({/id}).
+            </ul><br>
+          </div>
+        </div>
+      </div>
+
+      <div class = "invisiblediv" id = "page4" display = "inline">
+        <div class = "infopanel">
+          <div class = "infotext"><br>
+            <strong>Dato tipo Movimiento: {"id": integer, "creado": timestamp, "procesado": timestamp, "tipo": integer, "estado": integer, "importe": integer, "id_cuenta": integer}</strong><br>
+            Métodos:
+            <ul>
+              <li>GET: (/rest/movimiento): Devuelve una lista con todas los movimientos. En caso de especificarse un id, se pueden realizar las siguientes consultas modificando la ruta:
+                <ol>
+                  <li>(/{id}/ultimosdiez) devuelve los últimos 10 movimientos de dicho id.
+                  <li>(/{id}/saldo) devuelve el saldo de la cuenta de dicho id.
+                  <li>(/{id}/{estado}) devuelve todos los movimientos con el estado indicado.
+                </ol>
+                <li>POST: (/rest/movimiento): Consume un dato tipo Movimiento y lo agrega a la base de datos.
+                <li>PUT: (/rest/movimiento): Consume un dato tipo Movimiento, y actualiza la Movimiento en la base de datos que tenga el mismo id (/id).
+                <li>DELETE: (/rest/movimiento): Consume un dato tipo Movimiento, y elimina la Movimiento en la base de datos que tenga el mismo id (/id).
+            </ul><br>
+          </div>
+        </div>
+      </div>
+
     </div>
   </body>
 </html>
