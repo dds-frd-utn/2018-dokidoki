@@ -20,7 +20,7 @@ import utn.frd.dokidoki.entity.Cuenta;
 import utn.frd.dokidoki.sessions.CuentaFacade;
 /**
  *
- * @author Sergio
+ * @author Fedora
  */
 @Path("/cuenta")
 public class CuentaRest {
