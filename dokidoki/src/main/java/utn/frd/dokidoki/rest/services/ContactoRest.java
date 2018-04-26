@@ -49,7 +49,7 @@ public class ContactoRest {
     @DELETE
     @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
     @Path("/{id}")
-    public void remove(@PathParam("id")long id){
+    public void remove(@PathParam("id")int id){
         ejbContactoFacade.remove( ejbContactoFacade.find(id) );
     }
     //obtener una entidad por id

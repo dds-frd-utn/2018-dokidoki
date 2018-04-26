@@ -55,7 +55,7 @@ public class CuentaRest {
     @DELETE
     @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
     @Path("/{id}")
-    public void remove(@PathParam("id")long id){
+    public void remove(@PathParam("id")int id){
         ejbCuentaFacade.remove( ejbCuentaFacade.find(id) );
     }
     

@@ -49,7 +49,7 @@ public class MovimientoRest {
     @DELETE
     @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_PLAIN})
     @Path("/{id}")
-    public void remove(@PathParam("id")long id){
+    public void remove(@PathParam("id")int id){
         ejbMovimientoFacade.remove( ejbMovimientoFacade.find(id) );
     }
     //obtener los ultimos 10 movimientos de una cuenta
